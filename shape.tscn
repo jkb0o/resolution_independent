@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shape.gd" type="Script" id=1]
+[ext_resource path="res://point.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+void fragment(){
+	if (COLOR.a <= 0.0){
+		float v = COLOR.x;
+		float w = COLOR.y;
+		float t = COLOR.z;
+		if (v*v*v - w*t + 0.000001 > 0.0){
+			COLOR.rgb = vec3(1.0, 0.0, 0.0);
+		} else {
+			COLOR.rgb = vec3(0.0, 1.1, 0.0);
+		}
+		COLOR.a = 0.5;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+
+shader = SubResource( 1 )
+
+[node name="shape" type="Node2D"]
+material = SubResource( 2 )
+script = ExtResource( 1 )
+
+[node name="point" parent="." instance=ExtResource( 2 )]
+position = Vector2( 427, 294 )
+p_in = Vector2( -50, 50 )
+p_out = Vector2( 50, -50 )
+
+[node name="point2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 737, 319 )
+p_in = Vector2( 0, -50 )
+p_out = Vector2( 0, 50 )
+
+[node name="point3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 600, 502 )
+p_in = Vector2( 50, 0 )
+p_out = Vector2( -50, 0 )
+

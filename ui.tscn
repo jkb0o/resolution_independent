@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui.gd" type="Script" id=1]
+[ext_resource path="res://Geometria-Regular.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+
+default_font = SubResource( 1 )
+
+[node name="ui" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 1 )
+
+[node name="root" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+
+[node name="box" type="VBoxContainer" parent="root"]
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 393.0
+margin_bottom = -30.0
+mouse_filter = 2
+
+[node name="info" type="Label" parent="root/box"]
+margin_right = 375.0
+margin_bottom = 31.0
+text = "  Use [shift] for symmetry guides"
+
+[node name="draw_triangles" type="CheckButton" parent="root/box"]
+margin_top = 35.0
+margin_right = 375.0
+margin_bottom = 75.0
+pressed = true
+text = "Draw triangles"
+
+[node name="draw_outeline" type="CheckButton" parent="root/box"]
+margin_top = 79.0
+margin_right = 375.0
+margin_bottom = 119.0
+pressed = true
+text = "Draw outline"
+

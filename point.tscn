@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://point.gd" type="Script" id=1]
+
+[node name="point" type="Node2D"]
+position = Vector2( 319, 244 )
+script = ExtResource( 1 )
+p_in = Vector2( 50, 50 )
+p_out = Vector2( -50, 50 )
+
