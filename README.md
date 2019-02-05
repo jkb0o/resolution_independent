@@ -3,11 +3,12 @@ Resoulution independend rendering example
 
 This is Godot, purely GDScript implementation of Resolution independent rendering technique described by Charles Loop & Jim Blinn [here](https://www.microsoft.com/en-us/research/wp-content/uploads/2005/01/p1000-loop.pdf). Original code prepared by Mirco Müller, can be found [here](https://bazaar.launchpad.net/~macslow/gl-fragment-curves/trunk/files/14).
 
-Implemented simple shape, no antialiasing yet: [![good image](https://i.gyazo.com/6e4cc4ffaa2c632345d4993c97ff0709.gif)](https://gyazo.com/6e4cc4ffaa2c632345d4993c97ff0709)
+Implemented simple shape, no antialiasing yet:
+[![good image](https://i.gyazo.com/6e4cc4ffaa2c632345d4993c97ff0709.gif)](https://gyazo.com/6e4cc4ffaa2c632345d4993c97ff0709)
 
-This shape drawn with just only 7 trianlges, some calculations required to provide resulting simple shader with params. The shader itself it really light:
+This shape drawn with just only 7 trianlges, some calculations required to provide resulting simple shader with params. The shader itself it really lightweight:
 ```
-hader_type canvas_item;
+shader_type canvas_item;
 
 void fragment(){
     if (COLOR.a <= 0.0){
